@@ -1,3 +1,9 @@
+# ToDo
+
+-   Fix calculator buttons
+-   Add save function to save fav measurements
+-   Style it
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
