@@ -6,7 +6,7 @@ class Button extends React.Component {
         const handleClick = this.props.handleClick;
 
         return (
-            <button onClick={handleClick} data-value={value}>
+            <button onClick={handleClick} value={value}>
                 {value}
             </button>
         )

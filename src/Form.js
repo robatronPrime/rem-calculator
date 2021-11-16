@@ -8,7 +8,7 @@ class Form extends React.Component {
         super(props);
         this.state = {
             value: '0',
-            measurement: '0',
+            calc: [],
             buttons: [
                 "0",
                 "1",
@@ -19,24 +19,24 @@ class Form extends React.Component {
                 "6",
                 "7",
                 "8",
-                "9"
+                "9",
+                "."
             ]
         };
 
-        this.onClick = this.handleClick.bind(this);
+        this.handleClick = this.handleClick.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
 
     handleClick(event) {
+        this.setState((prevState) => ({
+            calc: [...prevState.calc, event.target.value]
+        }));
         event.preventDefault();
-        const target = event.target;
-        console.log(this.state.measurement);
-        // this.setState({measurement: target.dataset.value});
     }
 
     handleChange(event) {
-        console.log(this.state.measurement);
-        this.setState({measurement: event.target.value});
+        this.setState({calc: [event.target.value]});
     }
     
     render() {
@@ -44,13 +44,13 @@ class Form extends React.Component {
 
         return (
             <form>
-                < Output scale="px" value={this.state.measurement}/>
-                < Output scale="rem" value={this.state.measurement}/>
-                < MeasurementCalc handleChange={this.handleChange} />
+                < Output scale="px" value={this.state.calc}/>
+                < Output scale="rem" value={this.state.calc}/>
+                < MeasurementCalc handleChange={this.handleChange} value={this.state.calc} />
                 <div>
                     {
                         buttons.map((button,index)=>{
-                            return < Button key={index} value={button} handleClick={this.handleClick} />;
+                            return < Button key={index} value={button} handleClick={this.handleClick}/>;
                         })
                     }
                 </div>

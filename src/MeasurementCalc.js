@@ -3,6 +3,7 @@ import React from "react";
 class MeasurementCalc extends React.Component {
     render() {
         const handleChange = this.props.handleChange;
+        const value = this.props.value;
 
         return (
             <fieldset className="App-fieldset">
@@ -10,7 +11,7 @@ class MeasurementCalc extends React.Component {
                 <input 
                     className="App-input"
                     type="number" 
-                    value={handleChange.measurement} 
+                    value={value.join('')} 
                     onChange={handleChange} />
             </fieldset>
         )

@@ -1,6 +1,7 @@
 # ToDo
 
--   Fix calculator buttons
+-   Add backspace button and clear button
+
 -   Add save function to save fav measurements
 -   Style it
 
