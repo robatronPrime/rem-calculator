@@ -1,6 +1,6 @@
 import React from "react";
 
-class MeasurementCalc extends React.Component {
+class Input extends React.Component {
     render() {
         const handleChange = this.props.handleChange;
         const value = this.props.value;
@@ -10,7 +10,7 @@ class MeasurementCalc extends React.Component {
                 <legend>Enter your measurement:</legend>
                 <input 
                     className="App-input"
-                    type="number" 
+                    type="text" 
                     value={value.join('')} 
                     onChange={handleChange} />
             </fieldset>
@@ -18,4 +18,4 @@ class MeasurementCalc extends React.Component {
     }
 }
 
-export default MeasurementCalc;
+export default Input;
